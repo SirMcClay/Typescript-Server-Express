@@ -32,4 +32,10 @@ class LoginController {
 			res.send('You must provide your credentials');
 		}
 	}
+
+	@get('/logout')
+	getLogout(req: Request, res: Response) {
+		req.session = null;
+		res.redirect('/');
+	}
 }
